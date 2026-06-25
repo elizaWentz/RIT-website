@@ -46,6 +46,15 @@
       </figure>
     </header>
 
+    <nav class="project-detail__back-nav" aria-label="Terug navigatie">
+      <a class="project-detail__back-link" href="../homepage-rit-website/index.html" onclick="if (history.length > 1) { history.back(); return false; }">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 12H5m6-6-6 6 6 6"></path>
+        </svg>
+        <span>Terug</span>
+      </a>
+    </nav>
+
     <section class="project-detail__section--intro">
       <article class="project-detail__container project-detail__intro-grid">
         <h2 class="project-detail__visually-hidden">Samenvatting van het project</h2>
@@ -63,10 +72,6 @@
           <div >
             <dt>Partners</dt>
             <dd>Scroll scroll scroll<br>Gemeente Amsterdam</dd>
-          </div>
-          <div>
-            <dt>Bronnen</dt>
-            <dd><a href="#" aria-label="Open projectbron Openresearch">Openresearch</a></dd>
           </div>
         </dl>
       </article>
@@ -127,6 +132,24 @@
             <span class="project-detail__image-placeholder" role="img" aria-label="Plaats voor projectfoto 3."></span>
           </li>
         </ul>
+
+        <section class="project-detail__sources" aria-labelledby="project-detail-sources-title">
+          <h2 id="project-detail-sources-title" class="project-detail__visually-hidden">Bronnen</h2>
+          <ul class="project-detail__sources-list">
+            <li>
+              <span class="project-detail__source-label">Bron</span>
+              <a href="#" aria-label="Open projectbron Openresearch">Openresearch</a>
+            </li>
+            <li>
+              <span class="project-detail__source-label">Bron</span>
+              <a href="#" aria-label="Open projectbron Gemeente Amsterdam">Gemeente Amsterdam</a>
+            </li>
+            <li>
+              <span class="project-detail__source-label">Bron</span>
+              <a href="#" aria-label="Open projectbron Projectdocumentatie">Projectdocumentatie</a>
+            </li>
+          </ul>
+        </section>
       </div>
     </section>
 
