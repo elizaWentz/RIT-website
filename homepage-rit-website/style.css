@@ -321,7 +321,7 @@ h1{
 }
 
 .project-card{
-    background:white;
+    background:#F5EDD8;
     border-radius:12px;
     overflow:hidden;
     transition:var(--transition);
