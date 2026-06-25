@@ -5,7 +5,7 @@
 @font-face{
     font-family:"Atkinson Hyperlegible Next";
     src:url("../styles/font/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
-    font-weight:200 800;
+    font-weight:300 800;
     font-style:normal;
     font-display:swap;
 }
@@ -15,7 +15,7 @@
     --brown:#4E2B1C;
     --blue:#96BDBF;
 
-    --page-margin:clamp(1.5rem, 7vw, 6rem);
+    --page-margin:clamp(1.5rem, 15vw, 10rem);
     --container-width:87rem;
     --transition:0.3s ease;
 
@@ -338,7 +338,7 @@ ul{
 }
 
 .content-narrow{
-    max-width:850px;
+    max-width:1200px;
 }
 
 .content-narrow p{
@@ -534,12 +534,13 @@ h1{
     background:#F5EDD8;
     border-radius:12px;
     overflow:hidden;
-    transition:var(--transition);
+    transition: transform 240ms ease, filter 240ms ease;
 }
 
-.project-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+.project-card:hover,
+.project-card:focus-within{
+    filter:brightness(1.03);
+    transform:translateY(-0.25rem);
 }
 
 .card-image{
@@ -550,11 +551,13 @@ h1{
 .card-image img{
     height:100%;
     object-fit:cover;
-    transition:var(--transition);
+    transition:filter 320ms ease, transform 320ms ease;
 }
 
-.project-card:hover .card-image img{
-    transform:scale(1.05);
+.project-card:hover .card-image img,
+.project-card:focus-within .card-image img{
+    filter:saturate(1.12) contrast(1.04);
+    transform:scale(1.06);
 }
 
 .card-content{
@@ -566,13 +569,26 @@ h1{
 }
 
 .read-more-card{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    gap:0.35rem;
     margin-top:1rem;
     font-weight:700;
+    transition:gap 220ms ease;
 }
 
-.project-card:hover .read-more-card{
-    transform:translateX(5px);
+.read-more-card span{
+    transition:transform 220ms ease;
+}
+
+.project-card:hover .read-more-card,
+.project-card:focus-within .read-more-card{
+    gap:0.8rem;
+}
+
+.project-card:hover .read-more-card span,
+.project-card:focus-within .read-more-card span{
+    transform:translateX(0.12rem);
 }
 
 /* ========================= */
