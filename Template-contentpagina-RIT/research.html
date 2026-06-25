@@ -16,28 +16,32 @@
     - Wijzig data-sketch-src voor het p5-sketchbestand van elk project.
   -->
   <main class="project-detail project-detail--beige" data-sketch-src="sketches/03-favoriet-50-variatie3.js">
+
     <header class="project-detail__hero">
 
+      <!-- titel en metadata -->
       <section class="project-detail__hero-panel" aria-label="Project introductie">
         <ul class="project-detail__meta-list" aria-label="Projectgegevens">
           <li>
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path>
             </svg>
-            <span>2025-2026</span>
+            <span>2024</span>
           </li>
           <li>
-            <svg id="project-detail__meta-icon--filled" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.42 0-8 2.24-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.76-3.58-5-8-5Z"></path>
+            <svg class="project-detail__meta-icon--clock" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 6v6l4 2"></path>
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
             </svg>
-            <span>7</span>
+            <span>1 jaar</span>
           </li>
         </ul>
 
         <h1>Check Out:<br> Wifi zonder socials</h1>
-        <p class="project-detail__kicker">Responsible IT <span aria-hidden="true">•</span> Studentenproject</p>
+        <p class="project-detail__kicker">Responsible IT <span aria-hidden="true">•</span> Research project</p>
       </section>
 
+      <!-- P5 banner -->
       <figure class="project-detail__p5visual">
         <a class="project-detail__sketch-download" download aria-label="Download de p5 code van dit project">
           <span class="project-detail__sketch" role="img" aria-label="Abstracte geometrische visualisatie met oranje, bruin, beige en lichtblauwe vlakken."></span>
@@ -55,66 +59,44 @@
       </a>
     </nav>
 
+    <!-- omschrijving en info -->
     <section class="project-detail__section--intro">
-      <article class="project-detail__container project-detail__intro-grid">
-        <h2 class="project-detail__visually-hidden">Samenvatting van het project</h2>
-        <p class="project-detail__intro-text">
-          De interventie Check-Out introduceert wifi-zones zonder sociale media op semi-openbare plekken,
-          zoals bibliotheken en huiswerkbegeleidingslocaties. Via fysieke check-out-punten kunnen jongeren
-          bewust offline gaan, wat bijdraagt aan meer focus tijdens het studeren.
-        </p>
+      <article class="project-detail__container project-detail__intro-grid project-detail__intro-grid--research">
+        <div class="project-detail__intro-content">
+          <h2 class="project-detail__visually-hidden">Samenvatting van het project</h2>
+          <p class="project-detail__intro-text">
+            Provincie Noord-Holland onderzocht hoe de eigen organisatie veilig en verantwoord gebruik kan maken van generatieve AI, 
+            waaronder ChatGPT. In de pilot, met collega's vanuit de hele organisatie, werd geëxperimenteerd met deze technologie en konden de collega's 
+            volop met en van elkaar leren. Vanuit het RAAIT-programma was onderzoeker Sophie Horsman (Hogeschool van Amsterdam) één dag per week werkzaam bij de provincie, 
+            om mee te helpen met het organiseren van de workshops.
+          </p>
+          <div class="button-group">
+            <a href="studenten-projecten.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Bekijk het spel
+            </a>
+          </div>
+        </div>
 
         <dl class="project-detail__details-list">
           <div>
-            <dt>Onderwijseenheid</dt>
-            <dd>Studio Cyber resilience</dd>
+            <dt>Regeling</dt>
+            <dd>NWO</dd>
           </div>
           <div >
             <dt>Partners</dt>
-            <dd>Scroll scroll scroll<br>Gemeente Amsterdam</dd>
+            <dd>Provincie Noord-Holland</dd>
           </div>
+          <div >
+            <dt>Researchers</dt>
+            <dd>Sophie Horsman <br>s.horsman@hva.nl</dd>
+          </div>
+          
         </dl>
       </article>
     </section>
 
-    <section class="project-detail__section--facts">
-      <div class="project-detail__container">
-        <h2 class="project-detail__visually-hidden">Projectkenmerken</h2>
-        <ul class="project-detail__facts-list" aria-label="Projectkenmerken">
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="m22 10-10-5-10 5 10 5 10-5Z"></path>
-              <path d="M6 12.5V16c2.6 2 9.4 2 12 0v-3.5"></path>
-            </svg>
-            <span class="project-detail__fact-label">Opleiding</span>
-            <span class="project-detail__fact-value">HBO-ICT</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path>
-            </svg>
-            <span class="project-detail__fact-label">Jaar opleiding</span>
-            <span class="project-detail__fact-value">Jaar 2 + 3</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path>
-            </svg>
-            <span class="project-detail__fact-label">Duur</span>
-            <span class="project-detail__fact-value">Semester</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="m22 10-10-5-10 5 10 5 10-5Z"></path>
-              <path d="M6 12.5V16c2.6 2 9.4 2 12 0v-3.5"></path>
-            </svg>
-            <span class="project-detail__fact-label">Niveau</span>
-            <span class="project-detail__fact-value">Bachelor</span>
-          </li>
-        </ul>
-      </div>
-    </section>
 
+    <!-- Foto's Project -->
     <section class="project-detail__section--gallery">
       <div class="project-detail__container">
         <h2 class="project-detail__visually-hidden">Projectbeelden</h2>
@@ -133,12 +115,13 @@
           </li>
         </ul>
 
+        <!-- bronnen -->
         <section class="project-detail__sources" aria-labelledby="project-detail-sources-title">
           <h2 id="project-detail-sources-title" class="project-detail__visually-hidden">Bronnen</h2>
           <ul class="project-detail__sources-list">
             <li>
               <span class="project-detail__source-label">Bron</span>
-              <a href="#" aria-label="Open projectbron Openresearch">Openresearch</a>
+              <a href="https://www.hva.nl/onderzoeksresultaten/2026/3/moralis-machina-gesprek-over-generatieve-ai-met-een-kaartspel" aria-label="Open projectbron HvA">www.hva.nl/onderzoeksresultaten</a>
             </li>
             <li>
               <span class="project-detail__source-label">Bron</span>
@@ -153,6 +136,8 @@
       </div>
     </section>
 
+
+    <!-- gerelateerde projecten -->
     <section class="project-detail__section--gerelateerd">
       <div class="project-detail__container">
         <h2 class="project-detail__related-title">Gerelateerde projecten</h2>
