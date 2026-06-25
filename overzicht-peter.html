@@ -8,135 +8,126 @@
       name="description"
       content="Overzicht van studentenprojecten van het lectoraat Responsible IT van de Hogeschool van Amsterdam."
     >
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="overzicht.css">
+    <script src="overzicht.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#inhoud">Direct naar de inhoud</a>
+      <!-- Skip link voor toetsenbordgebruikers -->
+    <a href="#main-content" class="skip-link">
+        Direct naar inhoud
+    </a>
+
+    <!-- Overlay achter toegankelijkheidspaneel -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
 
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Responsible IT homepage">
-        <img
-          src="afbeeldingen/hvaritlogo.png"
-          alt="Lectoraat Responsible IT en Hogeschool van Amsterdam"
-        >
-      </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="hoofdnavigatie"
-      >
-        <span class="menu-toggle__icon" aria-hidden="true"></span>
-        Menu
-      </button>
+        <div class="container header-inner">
 
-      <nav class="main-nav" id="hoofdnavigatie" aria-label="Hoofdnavigatie">
-        <ul>
-          <li>
-            <a href="index.html" aria-current="page">Studenten projecten</a>
-          </li>
-          <li>
-            <a href="research-projecten.html">Research projecten</a>
-          </li>
-          <li>
-            <a href="over-responsible-it.html">Over Responsible IT</a>
-          </li>
-          <li>
-            <button
-              class="accessibility-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="toegankelijkheid-instellingen"
-            >
-              Toegankelijkheid
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="images/hva-logo.png" alt="Responsible IT logo">
+            </a>
+
+            <!-- Hoofdmenu -->
+            <nav class="main-nav" aria-label="Hoofdnavigatie">
+
+                <ul>
+
+                    <li>
+                        <a href="studenten-projecten.html">
+                            Studenten projecten
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="onderzoeksprojecten.html">
+                            Onderzoeksprojecten
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="over-responsible-it.html">
+                            Over Responsible IT
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Toegankelijkheidsknop -->
+            <button id="accessibilityToggle" class="accessibility-button"
+                aria-label="Open toegankelijkheidsinstellingen" aria-expanded="false">
+
+                Toegankelijkheid
+
             </button>
-          </li>
-        </ul>
-      </nav>
 
-      <form
-        class="accessibility-panel"
-        id="toegankelijkheid-instellingen"
-        aria-label="Toegankelijkheidsinstellingen"
-        hidden
-      >
-        <fieldset>
-          <legend>Font groottes</legend>
-          <label>
-            <input type="radio" name="fontSize" value="small">
-            Kleiner
-          </label>
-          <label>
-            <input type="radio" name="fontSize" value="standard" checked>
-            Standaard
-          </label>
-          <label>
-            <input type="radio" name="fontSize" value="large">
-            Groter
-          </label>
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <legend>Animaties</legend>
-          <label>
-            <input type="radio" name="animation" value="none">
-            Animaties uit
-          </label>
-          <label>
-            <input type="radio" name="animation" value="reduced">
-            Minder animaties
-          </label>
-          <label>
-            <input type="radio" name="animation" value="all" checked>
-            Alle animaties
-          </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Contrast</legend>
-          <label>
-            <input type="radio" name="contrast" value="standard" checked>
-            Standaard contrast
-          </label>
-          <label>
-            <input type="radio" name="contrast" value="high">
-            Hoger contrast
-          </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Kleur modus</legend>
-          <label>
-            <input type="radio" name="theme" value="light" checked>
-            Licht
-          </label>
-          <label>
-            <input type="radio" name="theme" value="dark">
-            Donker
-          </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Lees niveau</legend>
-          <label>
-            <input type="radio" name="readingLevel" value="simple">
-            Simpel
-          </label>
-          <label>
-            <input type="radio" name="readingLevel" value="standard" checked>
-            Standaard
-          </label>
-          <label>
-            <input type="radio" name="readingLevel" value="advanced">
-            Geavanceerd
-          </label>
-        </fieldset>
-
-        <button class="accessibility-close" type="button">Sluiten</button>
-      </form>
     </header>
+
+    <!-- ========================= -->
+    <!-- TOEGANKELIJKHEIDSPANEEL -->
+    <!-- ========================= -->
+
+    <aside class="accessibility-panel" id="accessibilityPanel" aria-label="Toegankelijkheidsinstellingen">
+
+        <div class="panel-header">
+
+            <h2>Toegankelijkheid</h2>
+
+            <button id="closeAccessibility" class="close-panel" aria-label="Sluit paneel">
+
+                ✕
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Lettergrootte</h3>
+
+            <button id="fontNormal" class="setting-btn">
+                Normaal
+            </button>
+
+            <button id="fontLarge" class="setting-btn">
+                Groot
+            </button>
+
+            <button id="fontXLarge" class="setting-btn">
+                Extra groot
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Contrast</h3>
+
+            <button id="contrastToggle" class="setting-btn">
+                Hoog contrast
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Animaties</h3>
+
+            <button id="motionToggle" class="setting-btn">
+                Verminder animaties
+            </button>
+
+        </div>
+
+    </aside>
 
     <main id="inhoud">
       <section class="hero">
