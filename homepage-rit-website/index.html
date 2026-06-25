@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsible IT</title>
+
+    <!-- Atkinson Hyperlegible Next -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="images/fav-icon.png">
+</head>
+
+<body>
+
+    <!-- Skip link voor toetsenbordgebruikers -->
+    <a href="#main-content" class="skip-link">
+        Direct naar inhoud
+    </a>
+
+    <!-- Overlay achter toegankelijkheidspaneel -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="images/hva-logo.png" alt="Responsible IT logo">
+            </a>
+
+            <!-- Hoofdmenu -->
+            <nav class="main-nav" aria-label="Hoofdnavigatie">
+
+                <ul>
+
+                    <li>
+                        <a href="studenten-projecten.html">
+                            Studenten projecten
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="onderzoeksprojecten.html">
+                            Onderzoeksprojecten
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="over-responsible-it.html">
+                            Over Responsible IT
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Toegankelijkheidsknop -->
+            <button id="accessibilityToggle" class="accessibility-button"
+                aria-label="Open toegankelijkheidsinstellingen" aria-expanded="false">
+
+                Toegankelijkheid
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- TOEGANKELIJKHEIDSPANEEL -->
+    <!-- ========================= -->
+
+    <aside class="accessibility-panel" id="accessibilityPanel" aria-label="Toegankelijkheidsinstellingen">
+
+        <div class="panel-header">
+
+            <h2>Toegankelijkheid</h2>
+
+            <button id="closeAccessibility" class="close-panel" aria-label="Sluit paneel">
+
+                ✕
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Lettergrootte</h3>
+
+            <button id="fontNormal" class="setting-btn">
+                Normaal
+            </button>
+
+            <button id="fontLarge" class="setting-btn">
+                Groot
+            </button>
+
+            <button id="fontXLarge" class="setting-btn">
+                Extra groot
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Contrast</h3>
+
+            <button id="contrastToggle" class="setting-btn">
+                Hoog contrast
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Animaties</h3>
+
+            <button id="motionToggle" class="setting-btn">
+                Verminder animaties
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+    <main id="main-content">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-image">
+
+                <!-- Eigen afbeelding plaatsen -->
+                <img src="images/banner1.png" alt="Hero afbeelding">
+
+            </div>
+
+        </section>
+
+        <!-- INTRO -->
+
+        <section class="intro-section">
+
+            <div class="container intro-grid">
+
+                <div class="intro-content">
+
+                    <h1>
+                        Verantwoord ontwerpen,
+                        ontwikkelen en gebruiken
+                        van digitale technologie.
+                    </h1>
+
+                    <p>
+                        Technologie is niet neutral, maar heeft effecten op het handelingsperspectief van de mensen (en
+                        niet-mensen) die direct of indirect met de technologie in aanraking komen. Technologie heeft
+                        daarmee altijd ook een maatschappelike en een ethische dimensie. Het lectoraat Responsible IT
+                        onderzockt hoe we bij het ontwerpen, ontwikkelen en gebruiken van digitale technologie, in het
+                        bijzonder Al, rekening kunnen houden met de ethische en maatschappelijke gevolgen van die
+                        technologie.
+                    </p>
+
+                    <div class="button-group">
+
+                        <a href="studenten-projecten.html" class="btn btn-primary">
+                            Bekijk studentenprojecten
+                        </a>
+
+                        <a href="onderzoeksprojecten.html" class="btn btn-secondary">
+                            Bekijk onderzoeksprojecten
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="intro-side">
+
+                    <p>
+                        Lees hier in het bijzonder hoe AI, rekening kan houden
+                        met de ethische en maatschappelijke gevolgen van
+                        technologie.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Lees meer
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- STUDENTEN -->
+
+        <section class="projects-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">
+                            STUDENTEN
+                        </span>
+
+                        <h2>
+                            Uitgelichte Studentenprojecten
+                        </h2>
+                    </div>
+
+                    <a href="studenten-projecten.html" class="all-projects">
+                        Alle projecten →
+                    </a>
+
+                </div>
+
+                <div class="card-grid">
+
+                    <a href="project-detail.html" class="project-card">
+
+                        <div class="card-image">
+                            <img src="images/image3.png" alt="">
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Fashion Police
+                            </h3>
+
+                            <p>
+                                De opkomst van grootschalige taalmodellen en andere AI-gedreven technologieën heeft
+                                belangrijke maatschappelijke vragen opgeroepen over het gebruik van kunstmatige
+                                intelligentie in de media.
+                            </p>
+
+                            <span class="read-more-card">
+                                Lees meer →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <a href="project-detail.html" class="project-card">
+
+                        <div class="card-image">
+                            <img src="images/sketch1.jpeg" alt="">
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                AiAiAi
+                            </h3>
+
+                            <p>
+                                De opkomst van grootschalige taalmodellen en andere AI-gedreven technologieën heeft
+                                belangrijke maatschappelijke vragen opgeroepen over het gebruik van kunstmatige
+                                intelligentie in de media.
+                            </p>
+
+                            <span class="read-more-card">
+                                Lees meer →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <a href="project-detail.html" class="project-card">
+
+                        <div class="card-image">
+                            <img src="images/banner1.png" alt="">
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                RAAIT Dashboard
+                            </h3>
+
+                            <p>
+                                De opkomst van grootschalige taalmodellen en andere AI-gedreven technologieën heeft
+                                belangrijke maatschappelijke vragen opgeroepen over het gebruik van kunstmatige
+                                intelligentie in de media.
+                            </p>
+
+                            <span class="read-more-card">
+                                Lees meer →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ONDERZOEK -->
+
+        <section class="projects-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            ONDERZOEKERS
+                        </span>
+
+                        <h2>
+                            Uitgelichte Onderzoeksprojecten
+                        </h2>
+
+                    </div>
+
+                    <a href="onderzoeksprojecten.html" class="all-projects">
+                        Alle projecten →
+                    </a>
+
+                </div>
+
+                <div class="card-grid">
+
+                    <a href="project-detail.html" class="project-card">
+
+                        <div class="card-image">
+                            <img src="images/img4.png" alt="">
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                AI en media: samenwerken voor een sterkere democratie
+                            </h3>
+
+                            <p>
+                                De opkomst van grootschalige taalmodellen en andere AI-gedreven technologieën heeft
+                                belangrijke maatschappelijke vragen opgeroepen over het gebruik van kunstmatige
+                                intelligentie in de media.
+                            </p>
+
+                            <span class="read-more-card">
+                                Lees meer →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <a href="project-detail.html" class="project-card">
+
+                        <div class="card-image">
+                            <img src="images/img5.jpeg" alt="">
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Check-Out: Wifi Zonder Socials
+                            </h3>
+
+                            <p>
+                                De opkomst van grootschalige taalmodellen en andere AI-gedreven technologieën heeft
+                                belangrijke maatschappelijke vragen opgeroepen over het gebruik van kunstmatige
+                                intelligentie in de media.
+                            </p>
+
+                            <span class="read-more-card">
+                                Lees meer →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <a href="project-detail.html" class="project-card">
+
+                        <div class="card-image">
+                            <img src="images/image61.png" alt="">
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                RAAIT - Responsible Applied Artificial InTelligence
+                            </h3>
+
+                            <p>
+                                Hoe kunnen we kunstmatige intelligentie ontwikkelen die niet alleen slim en efficiënt
+                                is, maar ook recht doet aan ethische en maatschappelijke waarden?
+                            </p>
+
+                            <span class="read-more-card">
+                                Lees meer →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-links">
+
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="cookies.html">Cookies</a>
+                <a href="linkedin.html">LinkedIn</a>
+                <a href="email.html">E-mail</a>
+
+            </div>
+
+            <p>
+                © 2026 Responsible IT
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
