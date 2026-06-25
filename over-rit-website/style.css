@@ -61,9 +61,10 @@ body.high-contrast .project-card{
 }
 
 .rede-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    max-width: 300px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure the image fits nicely */
 }
 
 .rede-text {
