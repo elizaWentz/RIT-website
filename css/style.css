@@ -2,12 +2,25 @@
 /* BASIS */
 /* ========================= */
 
+@font-face{
+    font-family:"Atkinson Hyperlegible Next";
+    src:url("../styles/font/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
+    font-weight:200 800;
+    font-style:normal;
+    font-display:swap;
+}
+
 :root{
     --beige:#E8D7A9;
     --brown:#4E2B1C;
     --blue:#96BDBF;
 
+    --page-margin:clamp(1.5rem, 7vw, 6rem);
+    --container-width:87rem;
     --transition:0.3s ease;
+
+    --body-font: "Atkinson Hyperlegible Next", Arial, Helvetica, sans-serif;
+    --display-font: Arial, Helvetica, sans-serif;
 }
 
 /* Lettergroottes toegankelijkheid */
@@ -45,6 +58,18 @@ body.high-contrast .project-card{
     scroll-behavior:auto !important;
 }
 
+.reduce-motion .overlay{
+    transition:opacity .3s ease, visibility .3s ease !important;
+}
+
+.reduce-motion .accessibility-panel{
+    transition:right .3s ease !important;
+}
+
+.reduce-motion .main-nav a::after{
+    transition:width .3s ease !important;
+}
+
 *{
     margin:0;
     padding:0;
@@ -62,8 +87,6 @@ body{
     line-height:1.6;
 }
 
-
-/*home */
 img{
     display:block;
     width:100%;
@@ -79,7 +102,9 @@ ul{
 }
 
 .container{
-    width:min(1200px,90%);
+    width:100%;
+    max-width:calc(var(--container-width) + (var(--page-margin) * 2));
+    padding-inline:var(--page-margin);
     margin:auto;
 }
 
@@ -123,12 +148,24 @@ ul{
     width:250px;
 }
 
+.main-nav,
+.main-nav li{
+    display:flex;
+    align-items:center;
+}
+
 .main-nav ul{
     display:flex;
+    align-items:center;
     gap:2rem;
+    margin:0;
+    padding:0;
+    list-style:none;
 }
 
 .main-nav a{
+    display:flex;
+    align-items:center;
     color:white;
     position:relative;
     padding:1rem;
@@ -144,7 +181,7 @@ ul{
     width:0;
     height:2px;
     background:white;
-    transition:var(--transition);
+    transition:width .3s ease;
 }
 
 .main-nav a:hover::after,
@@ -192,13 +229,179 @@ ul{
 /* ========================= */
 
 .hero-image{
+    position:relative;
     height:420px;
     overflow:hidden;
 }
 
 .hero-image img{
+    width:100%;
     height:100%;
     object-fit:cover;
+}
+
+.hero-sketch-download{
+    position:relative;
+    display:block;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.hero-sketch-download::after{
+    content:"Download p5 code";
+    position:absolute;
+    right:1.25rem;
+    bottom:1.25rem;
+    z-index:2;
+    padding:.7rem .9rem;
+    background:#000000;
+    color:#ffffff;
+    font-size:.85rem;
+    opacity:0;
+    transform:translateY(.4rem);
+    transition:opacity 180ms ease, transform 180ms ease;
+}
+
+.hero-sketch-download:hover::after,
+.hero-sketch-download:focus-visible::after{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.hero-sketch-download:focus-visible{
+    outline:3px solid var(--blue);
+    outline-offset:-.35rem;
+}
+
+.hero-sketch{
+    position:relative;
+    display:block;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#e85a12;
+}
+
+.hero-sketch canvas{
+    position:absolute;
+    inset:0;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover;
+}
+
+/* ========================= */
+/* OVER PAGINA */
+/* ========================= */
+
+.about-hero{
+    position:relative;
+}
+
+.about-hero-image{
+    height:320px;
+    overflow:hidden;
+}
+
+.about-hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-card{
+    position:absolute;
+    left:5%;
+    bottom:-55px;
+    width:min(420px, 90%);
+    background:var(--brown);
+    color:white;
+    padding:2rem;
+    z-index:10;
+}
+
+.hero-card h1{
+    font-size:clamp(1.8rem, 8vw, 2.2rem);
+    margin-bottom:1rem;
+    overflow-wrap:break-word;
+}
+
+.hero-card p{
+    line-height:1.6;
+}
+
+.about-content{
+    padding-top:8rem;
+    padding-bottom:8rem;
+}
+
+.content-narrow{
+    max-width:850px;
+}
+
+.content-narrow p{
+    margin-bottom:2rem;
+    font-size:1.15rem;
+    line-height:1.7;
+}
+
+.content-narrow h2{
+    margin-top:3rem;
+    margin-bottom:1rem;
+    font-size:1.75rem;
+}
+
+.video-container{
+    position:relative;
+    height:0;
+    max-width:100%;
+    padding-bottom:56.25%;
+    overflow:hidden;
+}
+
+.video-container iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.lectorale-rede{
+    padding:2rem 0 0;
+}
+
+.rede-content{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+}
+
+.rede-image{
+    flex:0 0 min(300px, 38%);
+}
+
+.rede-image img{
+    height:auto;
+    border-radius:8px;
+    object-fit:cover;
+}
+
+.rede-text{
+    flex:1;
+    min-width:0;
+}
+
+.rede-text h2{
+    font-size:1.8rem;
+    margin-bottom:1rem;
+}
+
+.rede-text p{
+    font-size:1rem;
+    line-height:1.6;
+    margin-bottom:1.5rem;
 }
 
 /* ========================= */
@@ -414,7 +617,7 @@ h1{
     background:rgba(0,0,0,.5);
     opacity:0;
     visibility:hidden;
-    transition:.3s;
+    transition:opacity .3s ease, visibility .3s ease;
     z-index:1500;
 }
 
@@ -453,7 +656,7 @@ border-left:4px solid var(--brown);
 box-shadow:-10px 0 40px rgba(0,0,0,.15);
     z-index:2000;
     padding:2rem;
-    transition:.3s;
+    transition:right .3s ease;
     overflow:auto;
 }
 
@@ -467,7 +670,7 @@ box-shadow:-10px 0 40px rgba(0,0,0,.15);
     margin-bottom:2rem;
 }
 .panel-header h2{
-    font-size:1.6rem;
+    font-size:25.6px;
     color:var(--brown);
 }
 
@@ -532,17 +735,52 @@ a:focus-visible{
         flex-wrap:wrap;
         padding:1rem 0;
     }
+
+    .rede-content{
+        align-items:flex-start;
+    }
 }
 
 @media(max-width:700px){
+
+    body{
+        overflow-x:hidden;
+    }
 
     .card-grid{
         grid-template-columns:1fr;
     }
 
+    .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:1rem;
+    }
+
+    .logo img{
+        width:min(250px, 100%);
+    }
+
+    .main-nav,
+    .main-nav ul,
+    .main-nav li,
+    .main-nav a{
+        width:100%;
+    }
+
     .main-nav ul{
         flex-direction:column;
         gap:.5rem;
+        align-items:flex-start;
+    }
+
+    .main-nav a{
+        padding:.5rem 0;
+    }
+
+    .accessibility-button{
+        width:100%;
+        max-width:220px;
     }
 
     .hero-image{
@@ -552,5 +790,31 @@ a:focus-visible{
     .section-header{
         flex-direction:column;
         align-items:flex-start;
+    }
+
+    .about-hero-image{
+        height:260px;
+    }
+
+    .hero-card{
+        position:relative;
+        left:auto;
+        bottom:auto;
+        width:100%;
+        margin-top:-20px;
+    }
+
+    .about-content{
+        padding-top:3rem;
+        padding-bottom:5rem;
+    }
+
+    .rede-content{
+        flex-direction:column;
+    }
+
+    .rede-image{
+        flex:auto;
+        width:min(100%, 300px);
     }
 }

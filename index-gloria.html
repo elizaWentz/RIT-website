@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thuispagina Responsible IT">
     <title>Responsible IT</title>
-
-    <!-- Atkinson Hyperlegible Next -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="home.css">
+    <link rel="preload" href="styles/font/AtkinsonHyperlegibleNextVF-Variable.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/svg+xml" href="images/fav-icon.png">
+    <script src="vendor/p5.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -88,7 +86,6 @@
             <h2>Toegankelijkheid</h2>
 
             <button id="closeAccessibility" class="close-panel" aria-label="Sluit paneel">
-
                 ✕
             </button>
 
@@ -142,12 +139,18 @@
 
         <!-- HERO -->
 
-        <section class="hero">
+        <!--
+            - Wijzig data-hero-sketch-src om de p5 banner sketch te veranderen.
+            - De downloadlink gebruikt automatisch hetzelfde sketchbestand.
+        -->
+        <section class="hero" data-hero-sketch-src="sketches/03-favoriet-50-variatie3.js">
 
             <div class="hero-image">
 
-                <!-- Eigen afbeelding plaatsen -->
-                <img src="images/banner1.png" alt="Hero afbeelding">
+                <a class="hero-sketch-download" download aria-label="Download de p5 code van deze hero banner">
+                    <span class="hero-sketch" role="img"
+                        aria-label="Abstracte geometrische visualisatie met oranje, bruin, beige en lichtblauwe vlakken."></span>
+                </a>
 
             </div>
 
@@ -456,7 +459,6 @@
 
     </footer>
 
-    <script src="script.js"></script>
 
 </body>
 
