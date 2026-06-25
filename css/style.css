@@ -81,7 +81,7 @@ html{
 }
 
 body{
-    font-family:"Atkinson Hyperlegible Next","Inter",sans-serif;
+    font-family:var(--body-font);
     background:var(--beige);
     color:var(--brown);
     line-height:1.6;
@@ -322,6 +322,7 @@ ul{
 }
 
 .hero-card h1{
+    font-family:var(--display-font);
     font-size:clamp(1.8rem, 8vw, 2.2rem);
     margin-bottom:1rem;
     overflow-wrap:break-word;
@@ -422,6 +423,10 @@ h1{
     font-size:clamp(2rem,4vw,3.5rem);
     line-height:1.1;
     margin-bottom:1.5rem;
+}
+
+.intro-content h1{
+    font-family:var(--display-font);
 }
 
 .button-group{
