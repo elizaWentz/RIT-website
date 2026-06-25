@@ -4,286 +4,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsible IT</title>
+    <title>P5.js Projecten</title>
 
-    <!-- Atkinson Hyperlegible Next -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/p5-gloria.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="over.css">
-    <link rel="icon" type="image/svg+xml" href="images/fav-icon.png">
 </head>
 
 <body>
 
-    <!-- Skip link voor toetsenbordgebruikers -->
-    <a href="#main-content" class="skip-link">
-        Direct naar inhoud
-    </a>
+<a href="#main-content" class="skip-link">
+    Direct naar inhoud
+</a>
 
-    <!-- Overlay achter toegankelijkheidspaneel -->
-    <div class="overlay" id="overlay"></div>
+<div class="overlay" id="overlay"></div>
 
-    <!-- ========================= -->
-    <!-- HEADER -->
-    <!-- ========================= -->
+<header class="site-header">
 
-    <header class="site-header">
+    <div class="container header-inner">
 
-        <div class="container header-inner">
+        <a href="index-gloria.html" class="logo">
+            <img src="images/hva-logo.png" alt="Responsible IT">
+        </a>
 
-            <!-- Logo -->
-            <a href="index-gloria.html" class="logo">
-                <img src="images/hva-logo.png" alt="Responsible IT logo">
-            </a>
+        <nav class="main-nav" aria-label="Hoofdnavigatie">
 
-            <!-- Hoofdmenu -->
-            <nav class="main-nav" aria-label="Hoofdnavigatie">
+            <ul>
+
+                <li>
+                    <a href="overzicht-peter.html">
+                        Studenten projecten
+                    </a>
+                </li>
+
+                <li>
+                    <a href="onderzoeksprojecten.html">
+                        Onderzoeksprojecten
+                    </a>
+                </li>
+
+                <li>
+                    <a href="over-gloria.html">
+                        Over Responsible IT
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <button
+            id="accessibilityToggle"
+            class="accessibility-button"
+            aria-expanded="false">
+
+            Toegankelijkheid
+
+        </button>
+
+    </div>
+
+</header>
+
+<aside
+    class="accessibility-panel"
+    id="accessibilityPanel">
+
+    <div class="panel-header">
+
+        <h2>Toegankelijkheid</h2>
+
+        <button
+            id="closeAccessibility"
+            class="close-panel">
+
+            ✕
+
+        </button>
+
+    </div>
+
+    <div class="setting-group">
+
+        <h3>Lettergrootte</h3>
+
+        <button id="fontNormal" class="setting-btn">
+            Normaal
+        </button>
+
+        <button id="fontLarge" class="setting-btn">
+            Groot
+        </button>
+
+        <button id="fontXLarge" class="setting-btn">
+            Extra groot
+        </button>
+
+    </div>
+
+    <div class="setting-group">
+
+        <h3>Contrast</h3>
+
+        <button id="contrastToggle" class="setting-btn">
+            Hoog contrast
+        </button>
+
+    </div>
+
+    <div class="setting-group">
+
+        <h3>Animaties</h3>
+
+        <button id="motionToggle" class="setting-btn">
+            Verminder animaties
+        </button>
+
+    </div>
+
+</aside>
+
+<main id="main-content">
+
+    <!-- HERO -->
+
+    <section class="p5-hero">
+
+        <img
+            src="images/placeholder-banner.jpg"
+            alt="P5 Hero"
+            class="hero-image">
+
+        <div class="hero-card">
+
+            <h1>
+                Studentenprojecten met p5
+            </h1>
+
+            <p>
+                Wat kun je met AI en p5.js visueel ontwerpen,
+                genereren en verbeelden?
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="btn btn-primary">
+                    Bekijk projecten
+                </a>
+
+                <a href="#uitleg" class="btn btn-secondary">
+                    Lees ons proces
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INTRO -->
+
+    <section class="intro-p5" id="uitleg">
+
+        <div class="container intro-layout">
+
+            <div>
+
+                <h2>
+                    Wat hebben we gedaan?
+                </h2>
+
+                <p>
+                    Voor dit project hebben wij studenten van CMD
+                    samengebracht rondom p5.js en AI.
+                </p>
+
+                <p>
+                    Met behulp van AI hebben we prompts ontwikkeld
+                    waarmee visuele composities gegenereerd konden worden.
+                </p>
+
+                <p>
+                    Vervolgens werden deze ontwerpen vertaald
+                    naar p5.js-code en verder verfijnd.
+                </p>
+
+                <a href="#" class="read-more">
+                    Lees meer →
+                </a>
+
+            </div>
+
+            <div class="intro-image">
+
+                <img
+                    src="images/placeholder-grid.jpg"
+                    alt="Visualisaties">
+
+                <p class="image-caption">
+                    *Bijpassende foto komt hier*
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTEN -->
+
+    <section class="projects-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Projecten
+            </h2>
+
+            <div class="card-grid">
+
+                <!-- 6 kaarten -->
+
+                <a href="#" class="project-card">
+                    <div class="card-image">
+                        <img src="images/project1.jpg" alt="">
+                    </div>
+
+                    <div class="card-content">
+                        <h3>AI voor inclusieve dienstverlening</h3>
+                        <p>Korte beschrijving van het project.</p>
+                        <span class="read-more-card">
+                            Lees meer →
+                        </span>
+                    </div>
+                </a>
+
+                <a href="#" class="project-card">
+                    <div class="card-image">
+                        <img src="images/project2.jpg" alt="">
+                    </div>
+
+                    <div class="card-content">
+                        <h3>AI voor inclusieve dienstverlening</h3>
+                        <p>Korte beschrijving van het project.</p>
+                        <span class="read-more-card">
+                            Lees meer →
+                        </span>
+                    </div>
+                </a>
+
+                <a href="#" class="project-card">
+                    <div class="card-image">
+                        <img src="images/project3.jpg" alt="">
+                    </div>
+
+                    <div class="card-content">
+                        <h3>AI voor inclusieve dienstverlening</h3>
+                        <p>Korte beschrijving van het project.</p>
+                        <span class="read-more-card">
+                            Lees meer →
+                        </span>
+                    </div>
+                </a>
+
+                <a href="#" class="project-card">
+                    <div class="card-image">
+                        <img src="images/project4.jpg" alt="">
+                    </div>
+
+                    <div class="card-content">
+                        <h3>AI voor inclusieve dienstverlening</h3>
+                        <p>Korte beschrijving van het project.</p>
+                        <span class="read-more-card">
+                            Lees meer →
+                        </span>
+                    </div>
+                </a>
+
+                <a href="#" class="project-card">
+                    <div class="card-image">
+                        <img src="images/project5.jpg" alt="">
+                    </div>
+
+                    <div class="card-content">
+                        <h3>AI voor inclusieve dienstverlening</h3>
+                        <p>Korte beschrijving van het project.</p>
+                        <span class="read-more-card">
+                            Lees meer →
+                        </span>
+                    </div>
+                </a>
+
+                <a href="#" class="project-card">
+                    <div class="card-image">
+                        <img src="images/project6.jpg" alt="">
+                    </div>
+
+                    <div class="card-content">
+                        <h3>AI voor inclusieve dienstverlening</h3>
+                        <p>Korte beschrijving van het project.</p>
+                        <span class="read-more-card">
+                            Lees meer →
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="projects-button">
+
+                <a href="#" class="btn-view-all">
+                    Bekijk projecten →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DOCUMENTATIE -->
+
+    <section class="documentation">
+
+        <div class="container documentation-layout">
+
+            <aside class="toc">
+
+                <h3>Inhoud</h3>
 
                 <ul>
 
-                    <li>
-                        <a href="overzicht-peter.html">
-                            Studenten projecten
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="onderzoeksprojecten.html">
-                            Onderzoeksprojecten
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="over-gloria.html">
-                            Over Responsible IT
-                        </a>
-                    </li>
+                    <li><a href="#intro" class="toc-link">Introductie</a></li>
+                    <li><a href="#stap1" class="toc-link">Eerste stappen</a></li>
+                    <li><a href="#stap2" class="toc-link">Doel opstellen</a></li>
+                    <li><a href="#stap3" class="toc-link">Inspiratie</a></li>
+                    <li><a href="#stap4" class="toc-link">Prompt</a></li>
+                    <li><a href="#stap5" class="toc-link">Code</a></li>
+                    <li><a href="#stap6" class="toc-link">Testen</a></li>
+                    <li><a href="#stap7" class="toc-link">Observaties</a></li>
+                    <li><a href="#stap8" class="toc-link">Conclusie</a></li>
 
                 </ul>
 
-            </nav>
+            </aside>
 
-            <!-- Toegankelijkheidsknop -->
-            <button id="accessibilityToggle" class="accessibility-button"
-                aria-label="Open toegankelijkheidsinstellingen" aria-expanded="false">
+            <div class="accordion-wrapper">
 
-                Toegankelijkheid
-
-            </button>
-
-        </div>
-
-    </header>
-
-    <!-- ========================= -->
-    <!-- TOEGANKELIJKHEIDSPANEEL -->
-    <!-- ========================= -->
-
-    <aside class="accessibility-panel" id="accessibilityPanel" aria-label="Toegankelijkheidsinstellingen">
-
-        <div class="panel-header">
-
-            <h2>Toegankelijkheid</h2>
-
-            <button id="closeAccessibility" class="close-panel" aria-label="Sluit paneel">
-
-                ✕
-            </button>
-
-        </div>
-
-        <div class="setting-group">
-
-            <h3>Lettergrootte</h3>
-
-            <button id="fontNormal" class="setting-btn">
-                Normaal
-            </button>
-
-            <button id="fontLarge" class="setting-btn">
-                Groot
-            </button>
-
-            <button id="fontXLarge" class="setting-btn">
-                Extra groot
-            </button>
-
-        </div>
-
-        <div class="setting-group">
-
-            <h3>Contrast</h3>
-
-            <button id="contrastToggle" class="setting-btn">
-                Hoog contrast
-            </button>
-
-        </div>
-
-        <div class="setting-group">
-
-            <h3>Animaties</h3>
-
-            <button id="motionToggle" class="setting-btn">
-                Verminder animaties
-            </button>
-
-        </div>
-
-    </aside>
-
-    <!-- ========================= -->
-    <!-- MAIN -->
-    <!-- ========================= -->
-    <main id="main-content">
-
-        <!-- HERO MET OVERLAY BLOK -->
-    
-        <section class="about-hero">
-    
-            <div class="about-hero-image">
-    
-                <img
-                    src="images/banner1.png"
-                    alt="Over Responsible IT">
-    
-            </div>
-    
-            <div class="container">
-    
-                <div class="hero-card">
-    
-                    <h1>
-                        Over responsible IT
-                    </h1>
-    
-                    <p>
-                        Het lectoraat Responsible IT richt zich samen met de
-                        Gemeente Amsterdam op de ontwikkeling van digitale
-                        technologie, met oog voor de maatschappelijke waarde
-                        en de menselijke maat. Toenemende digitalisering biedt
-                        kansen, maar legt ook druk op de samenleving.
-                    </p>
-    
-                </div>
-    
-            </div>
-    
-        </section>
-    
-        <!-- CONTENT -->
-        <section class="about-content">
-
-            <div class="container content-narrow">
-        
-                <p>
-                    Het lectoraat Responsible IT richt zich samen met de Gemeente Amsterdam op de ontwikkeling van digitale technologie, met oog voor de maatschappelijke waarde en de menselijke maat. Toenemende digitalisering biedt kansen, maar legt ook druk op de samenleving.
-                </p>
-        
-                <p>
-                    In de gemeente spelen tal van vraagstukken waaraan digitale technologie kan bijdragen, bijvoorbeeld op het gebied van leefbaarheid, gezondheid, onderwijs en mobiliteit. Het is hierbij van belang technologie zo te ontwikkelen, dat deze bijvoorbeeld privacy en autonomie waarborgt en niemand buitensluit. Een verantwoorde inzet en ontwikkeling van digitale technologie is voor de stad van cruciaal belang. Tegelijkertijd vormt de stad voor het lectoraat een belangrijk platform voor innovatie in direct contact met de inwoners.
-                </p>
-        
-                <p>
-                    We bevragen digitale technologie en ontwikkelen richtlijnen en gereedschappen om digitale technologie vanuit maatschappelijke waarden zoals autonomie, inclusie, diversiteit, non-discriminatie en duurzaamheid vorm te geven. Dit doen we in de praktijk aan hand van concrete vraagstukken, in nauwe samenwerking met burgers, programmeurs, ontwerpers, activisten, professionals, ambtenaren, studenten en docenten.
-                </p>
-        
-                <p>
-                    Wij werken met drie onderzoekslijnen
-                </p>
-        
-                <p>
-                    1. Verantwoorde digitale technologie: we onderzoeken hoe we digitale technologie expliciet vanuit maatschappelijke waarden kunnen ontwerpen en ontwikkelen door te digitale technologie te maken.
-                </p>
-        
-                <p>
-                    2. Gereedschappen voor verantwoord ontwerpen, ontwikkelen en gebruiken van technologie: we onderzoeken hoe we makers en gebruikers van digitale technologie handvatten kunnen bieden voor vormgeven van verantwoorde technologie en het verantwoord gebruiken van technologie.
-                </p>
-        
-                <p>
-                    3. Duiding en demystificatie van digitale technologie: binnen deze lijn vallen activiteiten waarin het lectoraat onderzoekt wat de effecten van het gebruik van technologie zijn.
-                </p>
-        
                 <h2>
-                    Responsible AI Lab
+                    P5.js - Hoe werkt het?
                 </h2>
-        
-                <p>
-                    Binnen het lectoraat Responsible IT richt het Responsible AI Lab zich specifiek op het vormgeven en gebruiken van verantwoorde AI binnen de creatieve sector en ICT.
-                </p>
-        
-                <h2>
-                    Samenwerkingspartners
-                </h2>
-        
-                <p>
-                    Doelgroepen van het lectoraat Responsible IT zijn studenten, docenten en professionals op het gebied van ontwerp, data-analyse, ICT en ethiek en de inwoners van de Metropoolregio Amsterdam.
-                </p>
-        
-                <!-- Embedded Video -->
-                <div class="video-container">
-                    <iframe 
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/4YlYHvDXhuA?si=dmwihBlaej1_9D5r" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-        
-            </div>
-            <section class="lectorale-rede">
-                <div class="container content-narrow">
-                    <div class="rede-content">
-                        <!-- Image on the left -->
-                        <div class="rede-image">
-                            <img src="images/uitnodiging_lectorale_rede_hva-wiggers.jpg" alt="Uitnodiging Lectorale Rede Pascal Wiggers">
-                        </div>
-                        <!-- Text on the right -->
-                        <div class="rede-text">
-                            <h2>Lectorale rede Pascal Wiggers</h2>
-                            <p>
-                                Op donderdag 30 oktober 2025 houdt Pascal Wiggers zijn lectorale rede. Pascal is sinds april 2024 Lector Responsible IT aan de Hogeschool van Amsterdam. Voorafgaand aan de rede organiseren we een interactieve rondetafelsessie over de rol van AI in de samenleving. De lectorale rede vindt plaats in de Gerard van Haarlemzaal in het Jakoba Mulderhuis (JMH) en is ook via een livestream te volgen. De link naar de livestream wordt een week van tevoren op de website geplaatst.
-                            </p>
-                            <!-- Updated Button -->
-                            <a href="https://www.hva.nl/evenementen/2025/10/lectorale-rede-pascal-wiggers" class="btn btn-primary">
-                                Meer informatie
-                            </a>
+
+                <div class="accordion">
+
+                    <div class="accordion-item" id="intro">
+                        <button class="accordion-header">
+                            Introductie
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                     </div>
+
+                    <div class="accordion-item" id="stap1">
+                        <button class="accordion-header">
+                            Eerste stappen
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>Placeholder tekst.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" id="stap2">
+                        <button class="accordion-header">
+                            Doel opstellen
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>Placeholder tekst.</p>
+                        </div>
+                    </div>
+
                 </div>
-            </section>
-    </main>
-    <!-- FOOTER -->
-
-    <footer class="site-footer">
-
-        <div class="container footer-inner">
-
-            <div class="footer-links">
-
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="cookies.html">Cookies</a>
-                <a href="linkedin.html">LinkedIn</a>
-                <a href="email.html">E-mail</a>
 
             </div>
 
-            <p>
-                © 2026 Responsible IT
-            </p>
-
         </div>
 
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+</main>
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+        <p>
+            © 2026 Responsible IT
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="js/p5-gloria.js"></script>
 
 </body>
-
 </html>

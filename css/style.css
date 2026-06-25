@@ -823,3 +823,385 @@ a:focus-visible{
         width:min(100%, 300px);
     }
 }
+
+/* ================================= */
+/* P5 GLORIA PAGINA */
+/* ================================= */
+
+:root{
+    --beige:#E6D8B3;
+    --brown:#4C2416;
+    --brown-dark:#3D1B10;
+    --orange:#F56B1D;
+    --blue:#B6D6D8;
+
+    --radius:12px;
+    --transition:.3s ease;
+}
+
+/* ================================= */
+/* HERO */
+/* ================================= */
+
+.p5-hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.p5-hero .hero-image{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+
+.hero-card{
+    position:absolute;
+    left:5%;
+    bottom:40px;
+
+    background:var(--brown);
+    color:white;
+
+    width:min(420px,90%);
+    padding:2rem;
+
+    z-index:10;
+}
+
+.hero-card h1{
+    font-size:2rem;
+    margin-bottom:1rem;
+    line-height:1.2;
+}
+
+.hero-card p{
+    margin-bottom:1.5rem;
+    line-height:1.6;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+/* ================================= */
+/* INTRO */
+/* ================================= */
+
+.intro-p5{
+    padding:6rem 0;
+}
+
+.intro-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:4rem;
+    align-items:start;
+}
+
+.intro-layout h2{
+    font-size:2.2rem;
+    margin-bottom:2rem;
+}
+
+.intro-layout p{
+    margin-bottom:1.5rem;
+    line-height:1.8;
+}
+
+.intro-image img{
+    width:100%;
+    border:6px solid white;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.image-caption{
+    text-align:center;
+    font-size:.9rem;
+    margin-top:1rem;
+}
+
+/* ================================= */
+/* PROJECTEN */
+/* ================================= */
+
+.projects-section{
+    padding-bottom:6rem;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:2rem;
+}
+
+.projects-section .card-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+}
+
+.projects-section .project-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    transition:var(--transition);
+}
+
+.projects-section .project-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.projects-section .card-image{
+    aspect-ratio:16/9;
+    overflow:hidden;
+}
+
+.projects-section .card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.projects-section .card-content{
+    padding:1.5rem;
+}
+
+.projects-section .card-content h3{
+    margin-bottom:1rem;
+    font-size:1.2rem;
+}
+
+.projects-section .card-content p{
+    font-size:.95rem;
+    line-height:1.6;
+}
+
+.read-more-card{
+    display:inline-block;
+    margin-top:1rem;
+    color:var(--orange);
+    font-weight:700;
+}
+
+.projects-button{
+    text-align:center;
+    margin-top:3rem;
+}
+
+.btn-view-all{
+    display:inline-block;
+    background:var(--orange);
+    color:white;
+    padding:1rem 2rem;
+    border-radius:10px;
+    font-weight:700;
+    transition:var(--transition);
+}
+
+.btn-view-all:hover{
+    transform:translateY(-3px);
+}
+
+/* ================================= */
+/* DOCUMENTATIE */
+/* ================================= */
+
+.documentation{
+    padding:6rem 0 8rem;
+}
+
+.documentation-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:4rem;
+    align-items:start;
+}
+
+/* ================================= */
+/* INHOUDSOPGAVE */
+/* ================================= */
+
+.toc{
+    position:sticky;
+    top:120px;
+}
+
+.toc h3{
+    margin-bottom:2rem;
+    font-size:2rem;
+}
+
+.toc ul{
+    display:flex;
+    flex-direction:column;
+    gap:1.25rem;
+    position:relative;
+}
+
+.toc ul::before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:10px;
+    bottom:10px;
+    width:2px;
+    background:#b8b8b8;
+}
+
+.toc li{
+    position:relative;
+    padding-left:2rem;
+}
+
+.toc li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+    background:#b8b8b8;
+
+    z-index:1;
+}
+
+.toc-link{
+    transition:var(--transition);
+}
+
+.toc-link.active{
+    color:var(--orange);
+    font-weight:700;
+}
+
+.toc li.active::before{
+    background:var(--orange);
+}
+
+/* ================================= */
+/* ACCORDION BLOK */
+/* ================================= */
+
+.accordion-wrapper{
+    background:var(--brown);
+    color:white;
+    padding:3rem;
+}
+
+.accordion-wrapper h2{
+    margin-bottom:2rem;
+    font-size:2rem;
+}
+
+.accordion{
+    display:flex;
+    flex-direction:column;
+}
+
+.accordion-item{
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.accordion-header{
+    width:100%;
+    background:none;
+    border:none;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:1.5rem 0;
+
+    cursor:pointer;
+
+    font-size:1rem;
+    text-align:left;
+}
+
+.accordion-header::after{
+    content:"⌄";
+    font-size:1.2rem;
+    transition:var(--transition);
+}
+
+.accordion-item.active .accordion-header::after{
+    transform:rotate(180deg);
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.accordion-content p{
+    padding-bottom:1.5rem;
+    line-height:1.8;
+}
+
+/* ================================= */
+/* LEES MEER LINK */
+/* ================================= */
+
+.read-more{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    font-weight:700;
+    margin-top:1rem;
+}
+
+.read-more:hover{
+    color:var(--orange);
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:1000px){
+
+    .documentation-layout{
+        grid-template-columns:1fr;
+    }
+
+    .toc{
+        position:relative;
+        top:auto;
+    }
+
+    .intro-layout{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:800px){
+
+    .projects-section .card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        position:relative;
+        left:auto;
+        bottom:auto;
+
+        width:100%;
+        max-width:none;
+    }
+
+    .p5-hero .hero-image{
+        height:280px;
+    }
+
+    .accordion-wrapper{
+        padding:2rem;
+    }
+}
