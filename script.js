@@ -257,3 +257,208 @@ function findHeroGeneratedCanvas(existingCanvases) {
 }
 
 initHeroSketchBanner();
+// =========================
+// SMOOTH SCROLL BUTTONS
+// =========================
+
+const projectButtons = document.querySelectorAll(
+    '[data-scroll="projects"]'
+);
+
+const processButtons = document.querySelectorAll(
+    '[data-scroll="process"]'
+);
+
+projectButtons.forEach(button => {
+
+    button.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        document
+            .getElementById("projects")
+            ?.scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+});
+
+processButtons.forEach(button => {
+
+    button.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        document
+            .getElementById("process")
+            ?.scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+});
+
+// =========================
+// EXTRA PROJECTEN
+// =========================
+
+const toggleProjectsBtn =
+    document.getElementById("toggleProjects");
+
+const hiddenProjects =
+    document.querySelector(".extra-projects");
+
+if(toggleProjectsBtn && hiddenProjects){
+
+    toggleProjectsBtn.addEventListener("click", () => {
+
+        const isOpen =
+        hiddenProjects.classList.toggle("active");
+    
+    toggleProjectsBtn.textContent =
+        isOpen
+            ? "Verberg projecten ▲"
+            : "Bekijk projecten ▼";
+
+    });
+
+}
+
+// =========================
+// ACCORDION
+// =========================
+
+const accordionItems =
+    document.querySelectorAll(".accordion-item");
+
+const timelineItems =
+    document.querySelectorAll(".timeline-item");
+
+accordionItems.forEach((item, index) => {
+
+    const header =
+        item.querySelector(".accordion-header");
+
+    const content =
+        item.querySelector(".accordion-content");
+
+    header.addEventListener("click", () => {
+
+        const isOpen =
+            item.classList.contains("active");
+
+        accordionItems.forEach(acc => {
+
+            acc.classList.remove("active");
+
+            acc.querySelector(
+                ".accordion-content"
+            ).style.maxHeight = null;
+
+        });
+
+        if(!isOpen){
+
+            item.classList.add("active");
+
+            content.style.maxHeight =
+                content.scrollHeight + "px";
+
+            updateTimeline(index);
+
+        }
+
+    });
+
+});
+
+// =========================
+// TIMELINE
+// =========================
+
+function updateTimeline(activeIndex){
+
+    timelineItems.forEach((item, index) => {
+
+        if(index <= activeIndex){
+
+            item.classList.add("active");
+
+        } else {
+
+            item.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+// =========================
+// KLIK OP LINKS MENU
+// =========================
+
+timelineItems.forEach((item, index) => {
+
+    item.addEventListener("click", () => {
+
+        accordionItems.forEach(acc => {
+
+            acc.classList.remove("active");
+
+            acc.querySelector(
+                ".accordion-content"
+            ).style.maxHeight = null;
+
+        });
+
+        const selected =
+            accordionItems[index];
+
+        selected.classList.add("active");
+
+        const content =
+            selected.querySelector(
+                ".accordion-content"
+            );
+
+        content.style.maxHeight =
+            content.scrollHeight + "px";
+
+        updateTimeline(index);
+
+        selected.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    });
+
+});
+
+// =========================
+// OPEN INTRO STANDAARD
+// =========================
+
+window.addEventListener("load", () => {
+
+    if(accordionItems.length){
+
+        accordionItems[0]
+            .classList.add("active");
+
+        const firstContent =
+            accordionItems[0]
+            .querySelector(".accordion-content");
+
+        firstContent.style.maxHeight =
+            firstContent.scrollHeight + "px";
+
+        updateTimeline(0);
+
+    }
+
+});
