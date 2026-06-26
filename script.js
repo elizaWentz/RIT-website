@@ -62,6 +62,10 @@ function toggleMenu() {
     }
 }
 
+const filters = document.querySelector(".filters");
+const projectGrid = document.querySelector(".card-grid");
+const projectCount = document.querySelector(".project-count");
+const noResults = document.querySelector(".no-results");
 // =========================
 // PANEL OPENEN
 // =========================
@@ -530,3 +534,62 @@ window.addEventListener("load", () => {
     }
 
 });
+
+
+if (filters && projectGrid && projectCount && noResults) {
+
+    const cards = Array.from(projectGrid.children);
+
+    filters.addEventListener("change", () => {
+
+        const opleiding = filters.elements.opleiding.value;
+        const jaar = filters.elements.jaar.value;
+        const sortering = filters.elements.sorteren.value;
+
+        const sortedCards = [...cards].sort((a, b) => {
+
+            if (sortering === "titel") {
+                return a.dataset.title.localeCompare(b.dataset.title, "nl");
+            }
+
+            if (sortering === "oudste") {
+                return Number(a.dataset.jaar) - Number(b.dataset.jaar);
+            }
+
+            if (sortering === "nieuwste") {
+                return Number(b.dataset.jaar) - Number(a.dataset.jaar);
+            }
+
+            return 0;
+        });
+
+        sortedCards.forEach(card => projectGrid.appendChild(card));
+
+        let visible = 0;
+
+        sortedCards.forEach(card => {
+
+            const opleidingOK =
+                !opleiding || card.dataset.opleiding === opleiding;
+
+            const jaarOK =
+                !jaar || card.dataset.jaar === jaar;
+
+            const show = opleidingOK && jaarOK;
+
+            card.hidden = !show;
+
+            if (show) visible++;
+
+        });
+
+        projectCount.textContent =
+            visible === 1
+                ? "1 project"
+                : `${visible} projecten`;
+
+        noResults.hidden = visible !== 0;
+
+    });
+
+}
