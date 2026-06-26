@@ -17,24 +17,24 @@ function draw() {
   fill("#eddcae");
   rect(0, H * 0.495, W, H * 0.505);
 
-  fill("#1C717E");
+  fill("#205140");
   beginShape();
   vertex(0, 0);
   vertex(W, 0);
   vertex(0, H * 0.495);
   endShape(CLOSE);
 
-  fill("#513244");
+  fill("#4C131A");
   beginShape();
   vertex(W * 0.25, H * 0.37);
   vertex(W * 0.75, H * 0.37);
   vertex(W * 0.75, H * 0.125);
   endShape(CLOSE);
 
-  fill("#C76E3C");
+  fill("#6F8960");
   rect(W * 0.248, H * 0.62, W * 0.502, H * 0.255);
 
-  fill("#513244");
+  fill("#4C131A");
   beginShape();
   vertex(0, H);
   vertex(W, H * 0.495);

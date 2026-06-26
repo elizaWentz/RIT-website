@@ -65,28 +65,42 @@ function draw() {
   strokeWeight(width * 0.00115);
   line(X(22), Y(24), X(371), Y(375));
 
-  // soft printed-paper texture
+  addPrintTexture()
+}
+
+function addPrintTexture() {
   loadPixels();
+
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       const i = 4 * (x + y * width);
-      const n = random(-18, 18);
-      const speckle = random() < 0.018 ? random(-35, 35) : 0;
+      const n = noise(x * 0.018, y * 0.018);
+      const grain = random(-18, 14) + map(n, 0, 1, -10, 10);
 
-      pixels[i] = constrain(pixels[i] + n + speckle, 0, 255);
-      pixels[i + 1] = constrain(pixels[i + 1] + n + speckle, 0, 255);
-      pixels[i + 2] = constrain(pixels[i + 2] + n + speckle, 0, 255);
+      pixels[i] = constrain(pixels[i] + grain, 0, 255);
+      pixels[i + 1] = constrain(pixels[i + 1] + grain, 0, 255);
+      pixels[i + 2] = constrain(pixels[i + 2] + grain, 0, 255);
     }
   }
+
   updatePixels();
 
-  // subtle left-edge wear
   noStroke();
-  for (let i = 0; i < 900; i++) {
-    const x = random(X(0), X(18));
-    const y = random(Y(115), height);
-    const a = random(8, 35);
-    fill(100, 110, 92, a);
-    circle(x, y, random(1, 5));
+
+  for (let i = 0; i < 32000; i++) {
+    fill(255, random(5, 18));
+    circle(random(width), random(height), random(0.4, 1.6));
   }
+
+  for (let i = 0; i < 18000; i++) {
+    fill(0, random(3, 10));
+    circle(random(width), random(height), random(0.35, 1.1));
+  }
+
+  blendMode(MULTIPLY);
+  for (let i = 0; i < 420; i++) {
+    fill(110, 70, 35, random(2, 7));
+    rect(random(width), random(height), random(30, 180), random(1, 4));
+  }
+  blendMode(BLEND);
 }

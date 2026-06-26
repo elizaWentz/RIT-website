@@ -39,6 +39,12 @@
                 <img src="images/hva-logo.png" alt="Responsible IT logo">
             </a>
 
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Hoofdmenu -->
             <nav class="main-nav" aria-label="Hoofdnavigatie">
 
@@ -86,7 +92,7 @@
 
         <div class="panel-header">
 
-            <h2>Toegankelijkheid</h2>
+            <h2 class="visually-hidden">Toegankelijkheid</h2>
 
             <button id="closeAccessibility" class="close-panel" aria-label="Sluit paneel">
 
@@ -142,34 +148,33 @@
 
         <!-- HERO MET OVERLAY BLOK -->
     
-        <section class="about-hero" data-hero-sketch-src="sketches/03-favoriet-50-variatie3.js">
+        <section class="p5-hero about-hero" data-hero-sketch-src="sketches/03-favoriet-50-variatie3.js">
+
+            <span
+                class="hero-image hero-sketch"
+                role="img"
+                aria-label="Abstracte geometrische visualisatie met oranje, bruin, beige en lichtblauwe vlakken."></span>
+
+            <a
+                class="hero-sketch-download"
+                download
+                aria-label="Download de p5 code van deze hero banner">
+                Download p5 code
+            </a>
+
+            <div class="hero-card">
     
-            <div class="about-hero-image">
+                <h1>
+                    Over responsible IT
+                </h1>
     
-                <a class="hero-sketch-download" download aria-label="Download de p5 code van deze hero banner">
-                    <span class="hero-sketch" role="img"
-                        aria-label="Abstracte geometrische visualisatie met oranje, bruin, beige en lichtblauwe vlakken."></span>
-                </a>
-    
-            </div>
-    
-            <div class="container">
-    
-                <div class="hero-card">
-    
-                    <h1>
-                        Over responsible IT
-                    </h1>
-    
-                    <p>
-                        Het lectoraat Responsible IT richt zich samen met de
-                        Gemeente Amsterdam op de ontwikkeling van digitale
-                        technologie, met oog voor de maatschappelijke waarde
-                        en de menselijke maat. Toenemende digitalisering biedt
-                        kansen, maar legt ook druk op de samenleving.
-                    </p>
-    
-                </div>
+                <p>
+                    Het lectoraat Responsible IT richt zich samen met de
+                    Gemeente Amsterdam op de ontwikkeling van digitale
+                    technologie, met oog voor de maatschappelijke waarde
+                    en de menselijke maat. Toenemende digitalisering biedt
+                    kansen, maar legt ook druk op de samenleving.
+                </p>
     
             </div>
     

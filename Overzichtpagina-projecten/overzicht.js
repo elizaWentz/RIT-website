@@ -32,15 +32,7 @@ const readingCopy = {
 let accessibilitySettings = loadSettings();
 
 const menuToggle = document.querySelector(".menu-toggle");
-const mainNav = document.querySelector("#hoofdnavigatie");
-
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener("click", () => {
-    const nextState = menuToggle.getAttribute("aria-expanded") !== "true";
-    menuToggle.setAttribute("aria-expanded", String(nextState));
-    mainNav.classList.toggle("is-open", nextState);
-  });
-}
+const headerInner = document.querySelector(".header-inner");
 
 const accessibilityToggle = document.querySelector("#accessibilityToggle");
 const accessibilityPanel = document.querySelector("#accessibilityPanel");
@@ -51,12 +43,41 @@ const fontLarge = document.querySelector("#fontLarge");
 const fontXLarge = document.querySelector("#fontXLarge");
 const contrastToggle = document.querySelector("#contrastToggle");
 const motionToggle = document.querySelector("#motionToggle");
+const desktopPanelParent = accessibilityPanel?.parentElement;
+const mobileMenuQuery = window.matchMedia("(max-width: 700px)");
 
 applySettings(accessibilitySettings);
+syncPanelLocation();
+
+if (menuToggle && headerInner) {
+  menuToggle.addEventListener("click", () => {
+    const nextState = !headerInner.classList.contains("menu-open");
+    headerInner.classList.toggle("menu-open", nextState);
+    menuToggle.setAttribute("aria-expanded", String(nextState));
+    menuToggle.setAttribute("aria-label", nextState ? "Sluit menu" : "Open menu");
+
+    if (!nextState) {
+      setAccessibilityPanel(false);
+    }
+  });
+}
+
+mobileMenuQuery.addEventListener("change", () => {
+  syncPanelLocation();
+  setAccessibilityPanel(false);
+
+  if (headerInner && menuToggle) {
+    headerInner.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+  }
+});
 
 if (accessibilityToggle && accessibilityPanel && overlay) {
   accessibilityToggle.addEventListener("click", () => {
-    setAccessibilityPanel(true);
+    setAccessibilityPanel(
+      !(isMobileMenu() && accessibilityPanel.classList.contains("active")),
+    );
   });
 
   accessibilityClose?.addEventListener("click", () => {
@@ -158,12 +179,29 @@ if (filters && projectGrid && projectCount && noResults) {
 function setAccessibilityPanel(isOpen) {
   accessibilityToggle.setAttribute("aria-expanded", String(isOpen));
   accessibilityPanel.classList.toggle("active", isOpen);
-  overlay?.classList.toggle("active", isOpen);
-  document.body.style.overflow = isOpen ? "hidden" : "";
+  overlay?.classList.toggle("active", isOpen && !isMobileMenu());
+  document.body.style.overflow = isOpen && !isMobileMenu() ? "hidden" : "";
 
   if (isOpen) {
     accessibilityClose?.focus();
   }
+}
+
+function isMobileMenu() {
+  return mobileMenuQuery.matches;
+}
+
+function syncPanelLocation() {
+  if (!accessibilityPanel || !headerInner || !desktopPanelParent) {
+    return;
+  }
+
+  if (isMobileMenu()) {
+    headerInner.appendChild(accessibilityPanel);
+    return;
+  }
+
+  desktopPanelParent.appendChild(accessibilityPanel);
 }
 
 function updateSettings(nextSettings) {

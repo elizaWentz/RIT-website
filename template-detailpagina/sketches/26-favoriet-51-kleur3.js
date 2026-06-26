@@ -6,11 +6,11 @@ function setup() {
 
 const sketch26Kleur3Palette = [
   "#9fc6c8",
-  "#4C131A",
-  "#6F8960",
-  "#6F8960",
+  "#513244",
+  "#1C717E",
+  "#1C717E",
   "#eddcae",
-  "#205140",
+  "#C76E3C",
   "#eddcae"
 ];
 
