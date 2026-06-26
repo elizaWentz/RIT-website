@@ -4,6 +4,22 @@ function setup() {
   pixelDensity(1);
 }
 
+const sketch26Kleur2Palette = [
+  "#9fc6c8",
+  "#4C131A",
+  "#6F8960",
+  "#6F8960",
+  "#eddcae",
+  "#205140",
+  "#eddcae"
+];
+
+function sketch26Kleur2Color(hex, alpha = 255) {
+  const c = color(hex);
+  c.setAlpha(alpha);
+  return c;
+}
+
 function draw() {
   const sx = width / 371;
   const sy = height / 375;
@@ -11,12 +27,12 @@ function draw() {
   const X = v => v * sx;
   const Y = v => v * sy;
 
-  background(184, 79, 58);
+  background(sketch26Kleur2Palette[0]);
 
   noStroke();
 
   // yellow stepped mass
-  fill(79, 47, 59);
+  fill(sketch26Kleur2Palette[1]);
   beginShape();
   vertex(X(0), Y(0));
   vertex(X(20), Y(0));
@@ -31,14 +47,14 @@ function draw() {
   endShape(CLOSE);
 
   // purple stepped blocks
-  fill(214, 163, 56);
+  fill(sketch26Kleur2Palette[2]);
   rect(X(21), Y(24), X(24), Y(25));
   rect(X(45), Y(48), X(47), Y(47));
   rect(X(92), Y(94), X(93), Y(94));
   rect(X(185), Y(188), X(186), Y(187));
 
   //  diagonal stair triangles / blocks
-  fill(215, 161, 164);
+  fill(sketch26Kleur2Palette[5]);
 
   triangle(X(21), Y(24), X(45), Y(49), X(21), Y(49));
 
@@ -61,7 +77,7 @@ function draw() {
   endShape(CLOSE);
 
   // thin white diagonal edge
-  stroke(157, 201, 211);
+  stroke(sketch26Kleur2Palette[4]);
   strokeWeight(width * 0.00115);
   line(X(22), Y(24), X(371), Y(375));
 
@@ -86,7 +102,7 @@ function draw() {
     const x = random(X(0), X(18));
     const y = random(Y(115), height);
     const a = random(8, 35);
-    fill(100, 110, 92, a);
+    fill(sketch26Kleur2Color(sketch26Kleur2Palette[5], a));
     circle(x, y, random(1, 5));
   }
 }

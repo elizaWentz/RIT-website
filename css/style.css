@@ -20,7 +20,7 @@
     --transition:0.3s ease;
 
     --body-font: "Atkinson Hyperlegible Next", Arial, Helvetica, sans-serif;
-    --display-font: Arial, Helvetica, sans-serif;
+    --display-font: "Arial Rounded MT Bold", "Helvetica Rounded", Helvetica, Arial, sans-serif;
 }
 
 /* Lettergroottes toegankelijkheid */
@@ -68,6 +68,19 @@ body.high-contrast .project-card{
 
 .reduce-motion .main-nav a::after{
     transition:width .3s ease !important;
+}
+
+.visually-hidden{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    clip-path:inset(50%);
+    white-space:nowrap;
+    border:0;
 }
 
 *{
@@ -146,6 +159,41 @@ ul{
 
 .logo img{
     width:250px;
+}
+
+.menu-toggle{
+    display:none;
+    width:48px;
+    height:48px;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:6px;
+    background:transparent;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.menu-toggle span{
+    display:block;
+    width:24px;
+    height:3px;
+    background:white;
+    border-radius:999px;
+    transition:transform .25s ease, opacity .25s ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1){
+    transform:translateY(9px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3){
+    transform:translateY(-9px) rotate(-45deg);
 }
 
 .main-nav,
@@ -241,15 +289,9 @@ ul{
 }
 
 .hero-sketch-download{
-    position:relative;
-    display:block;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-}
-
-.hero-sketch-download::after{
-    content:"Download p5 code";
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     position:absolute;
     right:1.25rem;
     bottom:1.25rem;
@@ -258,20 +300,32 @@ ul{
     background:#000000;
     color:#ffffff;
     font-size:.85rem;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:8px;
     opacity:0;
+    pointer-events:none;
     transform:translateY(.4rem);
-    transition:opacity 180ms ease, transform 180ms ease;
+    transition:background 180ms ease, opacity 180ms ease, transform 180ms ease;
 }
 
-.hero-sketch-download:hover::after,
-.hero-sketch-download:focus-visible::after{
+.hero-image:hover .hero-sketch-download,
+.hero-image:focus-within .hero-sketch-download,
+.p5-hero:hover .hero-sketch-download,
+.p5-hero:focus-within .hero-sketch-download{
     opacity:1;
+    pointer-events:auto;
     transform:translateY(0);
+}
+
+.hero-sketch-download:hover{
+    background:#1f1f1f;
+    transform:translateY(-.12rem);
 }
 
 .hero-sketch-download:focus-visible{
     outline:3px solid var(--blue);
-    outline-offset:-.35rem;
+    outline-offset:.25rem;
 }
 
 .hero-sketch{
@@ -314,7 +368,7 @@ ul{
     position:absolute;
     left:5%;
     bottom:-55px;
-    width:min(420px, 90%);
+    width:min(450px, 90%);
     background:var(--brown);
     color:white;
     padding:2rem;
@@ -788,8 +842,9 @@ a:focus-visible{
     }
 
     .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
+        display:grid;
+        grid-template-columns:minmax(0, 1fr) auto;
+        align-items:center;
         gap:1rem;
     }
 
@@ -797,7 +852,49 @@ a:focus-visible{
         width:min(250px, 100%);
     }
 
-    .main-nav,
+    .menu-toggle{
+        display:inline-flex;
+        justify-self:end;
+    }
+
+    .main-nav{
+        display:flex;
+        grid-column:1 / -1;
+        width:100%;
+        max-height:0;
+        opacity:0;
+        visibility:hidden;
+        overflow:hidden;
+        padding-inline:1rem;
+        transition:max-height .3s ease, opacity .3s ease, visibility .3s ease;
+    }
+
+    .header-inner.menu-open .main-nav{
+        max-height:260px;
+        opacity:1;
+        visibility:visible;
+    }
+
+    .header-inner > .accessibility-button{
+        display:inline-flex;
+        grid-column:1 / -1;
+        justify-self:start;
+        max-height:0;
+        opacity:0;
+        visibility:hidden;
+        overflow:hidden;
+        margin-left:1rem;
+        padding-block:0;
+        transition:max-height .3s ease, opacity .3s ease, visibility .3s ease, padding .3s ease;
+    }
+
+    .header-inner.menu-open > .accessibility-button{
+        max-height:64px;
+        opacity:1;
+        visibility:visible;
+        padding-block:.9rem;
+    }
+
     .main-nav ul,
     .main-nav li,
     .main-nav a{
@@ -817,6 +914,46 @@ a:focus-visible{
     .accessibility-button{
         width:100%;
         max-width:220px;
+    }
+
+    .header-inner > .accessibility-panel{
+        grid-column:1 / -1;
+        display:block;
+        position:static;
+        width:100%;
+        height:auto;
+        max-height:0;
+        padding:0 1.25rem;
+        border-left:none;
+        border-top:4px solid var(--brown);
+        box-shadow:none;
+        background:var(--beige);
+        opacity:0;
+        visibility:hidden;
+        overflow:hidden;
+        font-size:1rem;
+        transition:max-height .3s ease, opacity .3s ease, visibility .3s ease, padding .3s ease;
+    }
+
+    .header-inner > .accessibility-panel.active{
+        right:auto;
+        max-height:min(720px, calc(100dvh - 230px));
+        padding:1.25rem;
+        opacity:1;
+        visibility:visible;
+        overflow-y:auto;
+        overscroll-behavior:contain;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .header-inner > .accessibility-panel .panel-header{
+        justify-content:flex-end;
+        margin-bottom:1rem;
+    }
+
+    .header-inner > .accessibility-panel .setting-group h3,
+    .header-inner > .accessibility-panel .setting-btn{
+        font-size:1rem;
     }
 
     .hero-image{
@@ -911,9 +1048,15 @@ a:focus-visible{
 }
 
 .hero-buttons{
-    display:flex;
-    gap:1rem;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:.75rem;
+}
+
+.hero-buttons .btn{
+    min-width:0;
+    padding:.9rem 1rem;
+    text-align:center;
 }
 
 /* ================================= */

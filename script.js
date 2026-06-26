@@ -7,6 +7,8 @@ const overlay = document.getElementById("overlay");
 
 const openButton = document.getElementById("accessibilityToggle");
 const closeButton = document.getElementById("closeAccessibility");
+const menuButton = document.querySelector(".menu-toggle");
+const headerInner = document.querySelector(".header-inner");
 
 const fontNormal = document.getElementById("fontNormal");
 const fontLarge = document.getElementById("fontLarge");
@@ -14,6 +16,51 @@ const fontXLarge = document.getElementById("fontXLarge");
 
 const contrastToggle = document.getElementById("contrastToggle");
 const motionToggle = document.getElementById("motionToggle");
+const desktopPanelParent = panel?.parentElement;
+const mobileMenuQuery = window.matchMedia("(max-width: 700px)");
+
+function isMobileMenu() {
+
+    return mobileMenuQuery.matches;
+}
+
+function syncPanelLocation() {
+
+    if(!panel || !headerInner || !desktopPanelParent) {
+        return;
+    }
+
+    if(isMobileMenu()) {
+        headerInner.appendChild(panel);
+        return;
+    }
+
+    desktopPanelParent.appendChild(panel);
+}
+
+function closeMenu() {
+
+    headerInner?.classList.remove("menu-open");
+    menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "Open menu");
+}
+
+function toggleMenu() {
+
+    if(!headerInner || !menuButton) {
+        return;
+    }
+
+    const isOpen = !headerInner.classList.contains("menu-open");
+
+    headerInner.classList.toggle("menu-open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Sluit menu" : "Open menu");
+
+    if(!isOpen) {
+        closePanel();
+    }
+}
 
 // =========================
 // PANEL OPENEN
@@ -22,9 +69,11 @@ const motionToggle = document.getElementById("motionToggle");
 function openPanel() {
 
     panel.classList.add("active");
-    overlay.classList.add("active");
+    overlay.classList.toggle("active", !isMobileMenu());
 
-    document.body.style.overflow = "hidden";
+    if(!isMobileMenu()) {
+        document.body.style.overflow = "hidden";
+    }
 
     openButton.setAttribute("aria-expanded", "true");
 }
@@ -43,7 +92,26 @@ function closePanel() {
     openButton.setAttribute("aria-expanded", "false");
 }
 
-openButton.addEventListener("click", openPanel);
+syncPanelLocation();
+
+menuButton?.addEventListener("click", toggleMenu);
+
+mobileMenuQuery.addEventListener("change", () => {
+
+    syncPanelLocation();
+    closePanel();
+    closeMenu();
+});
+
+openButton.addEventListener("click", () => {
+
+    if(isMobileMenu() && panel.classList.contains("active")) {
+        closePanel();
+        return;
+    }
+
+    openPanel();
+});
 
 closeButton.addEventListener("click", closePanel);
 
@@ -158,7 +226,7 @@ loadSettings();
 
 function initHeroSketchBanner() {
 
-    const hero = document.querySelector(".hero[data-hero-sketch-src]");
+    const hero = document.querySelector("[data-hero-sketch-src]");
 
     if(!hero) {
         return;

@@ -37,13 +37,19 @@
                 <img src="images/hva-logo.png" alt="Responsible IT logo">
             </a>
 
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Hoofdmenu -->
             <nav class="main-nav" aria-label="Hoofdnavigatie">
 
                 <ul>
 
                     <li>
-                        <a href="overzicht-peter.html">
+                        <a href="p5-gloria.html">
                             Studenten projecten
                         </a>
                     </li>
@@ -84,7 +90,7 @@
 
         <div class="panel-header">
 
-            <h2>Toegankelijkheid</h2>
+            <h2 class="visually-hidden">Toegankelijkheid</h2>
 
             <button id="closeAccessibility" class="close-panel" aria-label="Sluit paneel">
                 ✕
@@ -136,9 +142,19 @@
 
         <!-- HERO -->
 
-        <section class="p5-hero">
+    <section class="p5-hero" data-hero-sketch-src="sketches/03-favoriet-50-variatie3.js">
 
-            <img src="images/banner1.png" alt="P5 Hero" class="hero-image">
+        <span
+            class="hero-image hero-sketch"
+            role="img"
+            aria-label="Abstracte geometrische visualisatie met oranje, bruin, beige en lichtblauwe vlakken."></span>
+
+        <a
+            class="hero-sketch-download"
+            download
+            aria-label="Download de p5 code van deze hero banner">
+            Download p5 code
+        </a>
 
             <div class="hero-card">
 
@@ -889,5 +905,4 @@
     <script src="js/p5-gloria.js"></script>
 
 </body>
-
 </html>
