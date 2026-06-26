@@ -158,7 +158,7 @@ loadSettings();
 
 function initHeroSketchBanner() {
 
-    const hero = document.querySelector(".hero[data-hero-sketch-src]");
+    const hero = document.querySelector("[data-hero-sketch-src]");
 
     if(!hero) {
         return;

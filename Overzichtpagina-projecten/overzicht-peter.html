@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Studentenprojecten - Responsible IT</title>
+    <meta
+      name="description"
+      content="Overzicht van studentenprojecten van het lectoraat Responsible IT van de Hogeschool van Amsterdam."
+    >
+    <link rel="stylesheet" href="overzicht.css">
+    <script src="overzicht.js" defer></script>
+  </head>
+  <body>
+      <!-- Skip link voor toetsenbordgebruikers -->
+    <a href="#main-content" class="skip-link">
+        Direct naar inhoud
+    </a>
+
+    <!-- Overlay achter toegankelijkheidspaneel -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="images/hva-logo.png" alt="Responsible IT logo">
+            </a>
+
+            <!-- Hoofdmenu -->
+            <nav class="main-nav" aria-label="Hoofdnavigatie">
+
+                <ul>
+
+                    <li>
+                        <a href="studenten-projecten.html">
+                            Studenten projecten
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="onderzoeksprojecten.html">
+                            Onderzoeksprojecten
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="over-responsible-it.html">
+                            Over Responsible IT
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Toegankelijkheidsknop -->
+            <button id="accessibilityToggle" class="accessibility-button"
+                aria-label="Open toegankelijkheidsinstellingen" aria-expanded="false">
+
+                Toegankelijkheid
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- TOEGANKELIJKHEIDSPANEEL -->
+    <!-- ========================= -->
+
+    <aside class="accessibility-panel" id="accessibilityPanel" aria-label="Toegankelijkheidsinstellingen">
+
+        <div class="panel-header">
+
+            <h2>Toegankelijkheid</h2>
+
+            <button id="closeAccessibility" class="close-panel" aria-label="Sluit paneel">
+
+                ✕
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Lettergrootte</h3>
+
+            <button id="fontNormal" class="setting-btn">
+                Normaal
+            </button>
+
+            <button id="fontLarge" class="setting-btn">
+                Groot
+            </button>
+
+            <button id="fontXLarge" class="setting-btn">
+                Extra groot
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Contrast</h3>
+
+            <button id="contrastToggle" class="setting-btn">
+                Hoog contrast
+            </button>
+
+        </div>
+
+        <div class="setting-group">
+
+            <h3>Animaties</h3>
+
+            <button id="motionToggle" class="setting-btn">
+                Verminder animaties
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main id="main-content">
+      <section class="hero">
+        <header>
+          <h1>Studentenprojecten</h1>
+          <p>
+            Bekijk hier hoe studenten van de HvA, in het bijzonder rond AI,
+            rekening houden met de ethische en maatschappelijke gevolgen van
+            die technologie.
+          </p>
+        </header>
+      </section>
+
+      <section class="projects">
+        <h2 class="visually-hidden">Overzicht studentenprojecten</h2>
+
+        <form class="filters" aria-label="Projecten filteren en sorteren">
+          <label>
+            <span class="visually-hidden">Opleiding</span>
+            <select name="opleiding">
+              <option value="">Alle opleidingen</option>
+              <option value="cmd">Communication and Multimedia Design</option>
+              <option value="ict">HBO-ICT</option>
+              <option value="media">Media, Informatie en Communicatie</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="visually-hidden">Jaar</span>
+            <select name="jaar">
+              <option value="2026">2025-2026</option>
+              <option value="2025">2024-2025</option>
+              <option value="2024">2023-2024</option>
+              <option value="">Alle jaren</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="visually-hidden">Sorteren</span>
+            <select name="sorteren">
+              <option value="titel">A-Z</option>
+              <option value="nieuwste">Nieuwste eerst</option>
+              <option value="oudste">Oudste eerst</option>
+            </select>
+          </label>
+
+          <p class="project-count" role="status" aria-live="polite">
+            12 projecten
+          </p>
+        </form>
+
+        <p class="no-results" hidden>
+          Geen projecten gevonden met deze filters.
+        </p>
+
+        <ul class="project-grid" aria-label="Projectkaarten">
+          <li data-opleiding="cmd" data-jaar="2026" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje1.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="ict" data-jaar="2026" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje2.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="media" data-jaar="2025" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje3.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="cmd" data-jaar="2025" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje4.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="ict" data-jaar="2025" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje5.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="media" data-jaar="2024" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje6.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="cmd" data-jaar="2024" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje1.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="ict" data-jaar="2024" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje2.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="media" data-jaar="2026" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje3.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="cmd" data-jaar="2026" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje4.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="ict" data-jaar="2025" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje5.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+
+          <li data-opleiding="media" data-jaar="2024" data-title="AI voor inclusieve dienstverlening">
+            <article class="project-card">
+              <img src="afbeeldingen/p5plaatje6.png" alt="" loading="lazy">
+              <h3>AI voor inclusieve dienstverlening</h3>
+              <p>
+                Onderzoek naar hoe AI-systemen ingezet kunnen worden om
+                publieke diensten toegankelijker te maken voor mensen met
+                een beperking.
+              </p>
+              <a href="studentenproject.html">
+                Lees meer
+                <span class="visually-hidden"> over AI voor inclusieve dienstverlening</span>
+                <span aria-hidden="true">-&gt;</span>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="afbeeldingen/hvaritlogo.png" alt="" loading="lazy">
+      <p>(c) 2026 Lectoraat Responsible IT - Hogeschool van Amsterdam</p>
+    </footer>
+  </body>
+</html>

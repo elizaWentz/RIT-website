@@ -310,6 +310,13 @@ ul{
     object-fit:cover;
 }
 
+.about-hero .container{
+    position:absolute;
+    inset:0;
+    z-index:3;
+    pointer-events:none;
+}
+
 .hero-card{
     position:absolute;
     left:5%;
@@ -319,6 +326,7 @@ ul{
     color:white;
     padding:2rem;
     z-index:10;
+    pointer-events:auto;
 }
 
 .hero-card h1{
@@ -830,6 +838,12 @@ a:focus-visible{
 
     .about-hero-image{
         height:260px;
+    }
+
+    .about-hero .container{
+        position:relative;
+        inset:auto;
+        pointer-events:auto;
     }
 
     .hero-card{
