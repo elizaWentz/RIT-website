@@ -458,7 +458,7 @@ Deze map bevat de studentenprojectenpagina van de Responsible IT website.
 
 Belangrijkste bestanden:
 
-* `p5-gloria.html` - inhoud en HTML-structuur van de studentenprojectenpagina
+* `over-p5.html` - inhoud en HTML-structuur van de studentenprojectenpagina
 * `css/style.css` - styling, layout, responsive gedrag en componenten
 * `script.js` - verzorgt het menu, toegankelijkheid, hero sketch en interactieve onderdelen
 * `sketches/` - p5 sketches voor de hero banner
@@ -466,7 +466,7 @@ Belangrijkste bestanden:
 
 ## Paginainhoud aanpassen
 
-De meeste content staat in `p5-gloria.html`.
+De meeste content staat in `over-p5.html`.
 
 Pas hier aan:
 
@@ -478,7 +478,7 @@ Pas hier aan:
 * afbeeldingen
 * links
 
-Zoek in `p5-gloria.html` naar de tekst die je wilt aanpassen en vervang die direct.
+Zoek in `over-p5.html` naar de tekst die je wilt aanpassen en vervang die direct.
 
 ## Hero sketch aanpassen
 
@@ -687,7 +687,7 @@ Deze map bevat de "Over Responsible IT"-pagina van de Responsible IT website.
 
 Belangrijkste bestanden:
 
-* `over-gloria.html` - inhoud en HTML-structuur van de pagina
+* `over-RIT.html` - inhoud en HTML-structuur van de pagina
 * `css/style.css` - styling, layout, responsive gedrag en componenten
 * `script.js` - verzorgt het menu, toegankelijkheid, hero sketch en interactieve onderdelen
 * `sketches/` - p5 sketches voor de hero banner
@@ -695,7 +695,7 @@ Belangrijkste bestanden:
 
 ## Paginainhoud aanpassen
 
-De meeste content staat in `over-gloria.html`.
+De meeste content staat in `over-RIT.html`.
 
 Pas hier aan:
 
@@ -708,7 +708,7 @@ Pas hier aan:
 * afbeeldingen
 * links in tekst en footer
 
-Zoek in `over-gloria.html` naar de tekst die je wilt aanpassen en vervang die direct.
+Zoek in `over-RIT.html` naar de tekst die je wilt aanpassen en vervang die direct.
 
 ## Hero sketch aanpassen
 
