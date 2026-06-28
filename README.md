@@ -266,7 +266,7 @@ Deze map bevat de homepage van de Responsible IT website.
 
 Belangrijkste bestanden:
 
-* `index-gloria.html` - inhoud en HTML-structuur van de homepage
+* `index.html` - inhoud en HTML-structuur van de homepage
 * `style.css` - styling, layout, responsive gedrag en componenten
 * `script.js` - verzorgt de interactieve onderdelen van de website
 * `sketches/` - p5 sketches voor de hero banner
@@ -274,7 +274,7 @@ Belangrijkste bestanden:
 
 ## Homepage aanpassen
 
-De meeste content staat in `index-gloria.html`.
+De meeste content staat in `index.html`.
 
 Pas hier aan:
 
@@ -285,7 +285,7 @@ Pas hier aan:
 * uitgelichte onderzoeksprojecten
 * footer links
 
-Zoek in `index-gloria.html` naar de tekst die je wilt aanpassen en vervang die direct.
+Zoek in `index.html` naar de tekst die je wilt aanpassen en vervang die direct.
 
 ## Hero sketch aanpassen
 
