@@ -4,7 +4,7 @@
 
 @font-face{
     font-family:"Atkinson Hyperlegible Next";
-    src:url("../styles/font/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
+    src:url("font/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
     font-weight:300 800;
     font-style:normal;
     font-display:swap;

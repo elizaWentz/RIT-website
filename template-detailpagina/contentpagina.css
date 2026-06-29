@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
-  src: url("../styles/font/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
+  src: url("../css/font/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
 }
