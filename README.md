@@ -19,9 +19,35 @@ Deze bestanden staan in de hoofdmap en horen bij de huidige website:
 
 Deze bestanden vormen op dit moment de leidende stijl van de website. Als er later stijlen botsen, gebruik dan de stijl uit `index.html`, `css/style.css` en `script.js` als basis.
 
+## Vendor map
+
+De map `vendor/` bevat externe code die nodig is voor de website. Op dit moment staat daar alleen `p5.min.js` in. Dit is de lokale versie van de p5.js library.
+
+De HTML-pagina's laden deze library met:
+
+```html
+<script src="vendor/p5.min.js" defer></script>
+```
+
+Omdat het bestand lokaal in de repo staat, is de website niet afhankelijk van een externe CDN-link. Door `defer` wordt het script pas uitgevoerd nadat de HTML is ingelezen. Dat helpt voorkomen dat p5.js het laden van de pagina direct blokkeert.
+
 Let op bij de navigatie: de knop **Studenten projecten** verwijst nu nog naar `over-p5.html`. Dat is tijdelijk. Uiteindelijk moet deze knop verwijzen naar de overzichtpagina met alle studentenprojecten, bijvoorbeeld `overzichtpagina.html`. De huidige p5-pagina kan dan als een van de studentenprojecten worden opgenomen in dat overzicht.
 
 Let ook op de p5 visuals: de afbeeldingen in projectkaarten zijn gewone `.png` of `.jpeg` bestanden. Dat is bewust gedaan, omdat de pagina te zwaar wordt als elke projectkaart een echte p5.js sketch laadt. De grote p5 banners zijn wel echte p5.js sketches. Die staan in de map `sketches/`. Als je een andere sketch als afbeelding in een projectkaart wilt gebruiken, maak dan eerst een screenshot/export naar `.png` of `.jpeg` en gebruik die afbeelding in de kaart.
+
+## P5 banners
+
+De p5 banners gebruiken echte p5.js code uit de map `sketches/`. Welke sketch wordt gebruikt, staat in de HTML op de hero-sectie:
+
+```html
+<section class="hero" data-hero-sketch-src="sketches/03-favoriet-50-variatie3.js">
+```
+
+In `script.js` zoekt de functie voor de hero banner naar `data-hero-sketch-src`. Daarna wordt alleen die ene sketch als extra script toegevoegd aan de pagina. De downloadlink voor de sketch wordt ook automatisch gekoppeld aan hetzelfde bestand.
+
+Dit helpt de performance omdat niet alle sketches tegelijk worden ingeladen. De pagina laadt alleen de p5.js library uit `vendor/` en daarna de sketch die op die specifieke pagina nodig is. Daarom moeten projectkaarten geen live p5 sketches gebruiken, maar afbeeldingen zoals `.png` of `.jpeg`.
+
+Let op: dit is nog niet perfect geoptimaliseerd. De p5.js library en de actieve banner-sketch blijven relatief zwaar. Verdere performance-verbetering is daarom nog nodig.
 
 ## Wat wordt nog niet gebruikt?
 
